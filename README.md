@@ -1,1 +1,69 @@
-# ProyectoFinal_BD1
+# Biblioteca Universitaria — Proyecto Final Base de Datos I
+
+Sistema de biblioteca: Oracle (Docker) + Spring Boot + Angular. El plan completo está en `CLAUDE.md` y el avance en `PROGRESO.md`.
+
+## Prerrequisitos
+
+| Herramienta | Versión | Notas |
+|-------------|---------|-------|
+| Docker Desktop | reciente | ≈2 GB de RAM libres para Oracle |
+| Git | reciente | |
+| JDK | 21 (o 17) | backend |
+| Node.js | 20+ | frontend (Angular CLI vía `npx`) |
+
+En Windows usar los scripts `.ps1` (PowerShell); en macOS/Linux los `.sh`.
+
+## De cero a funcionando
+
+### 1. Clonar
+```bash
+git clone https://github.com/AndresEAY/ProyectoFinal_BD1.git
+cd ProyectoFinal_BD1
+```
+
+### 2. Configurar `.env`
+Copiar `.env.example` a `.env` y ajustarlo a tu máquina. **`.env` no se sube a Git.**
+
+| Variable | Significado |
+|----------|-------------|
+| `DB_CONTAINER` | Nombre del contenedor Oracle |
+| `DB_IMAGE` | Imagen (solo si se crea con `docker compose`) |
+| `DB_PORT` | Puerto del host mapeado al 1521 del contenedor |
+| `DB_SERVICE` | PDB: `XEPDB1` (Oracle XE 21) o `FREEPDB1` (Oracle Free 23ai/26ai) |
+| `DB_SYSTEM_PASSWORD` | Contraseña de `SYSTEM` |
+| `APP_USER` / `APP_USER_PASSWORD` | Esquema de la aplicación (`BIBLIOTECA`) |
+
+**Si ya tienes un contenedor Oracle**, no crees otro: pon su nombre en `DB_CONTAINER`, su contraseña de SYSTEM y su PDB. Para descubrirlos:
+```bash
+docker ps -a
+docker inspect <contenedor> --format '{{json .Config.Env}}'
+```
+
+**Si no tienes ninguno**, `db-up` lo crea con `docker-compose.yml`:
+- PC Intel/AMD: `DB_IMAGE=gvenzl/oracle-xe:21-slim-faststart`, `DB_SERVICE=XEPDB1`
+- Mac Apple Silicon (ARM): `DB_IMAGE=gvenzl/oracle-free:23-slim`, `DB_SERVICE=FREEPDB1`
+
+### 3. Base de datos
+| Paso | macOS/Linux | Windows |
+|------|-------------|---------|
+| Levantar Oracle y esperar a que esté listo | `./scripts/db-up.sh` | `.\scripts\db-up.ps1` |
+| Crear el usuario de la app (idempotente) | `./scripts/db-create-user.sh` | `.\scripts\db-create-user.ps1` |
+| Instalar tablas, datos, PL/SQL y vistas | `./scripts/db-install.sh` | `.\scripts\db-install.ps1` |
+| Reinstalar desde cero (borra y recrea el esquema `APP_USER`) | `./scripts/db-reset.sh` | `.\scripts\db-reset.ps1` |
+| Ejecutar las pruebas de la BD | `./scripts/db-test.sh` | `.\scripts\db-test.ps1` |
+| Abrir SQL*Plus como usuario de la app (`--system` / `-System` para SYSTEM) | `./scripts/db-sql.sh` | `.\scripts\db-sql.ps1` |
+
+`db-reset` solo elimina el esquema de la aplicación, no el contenedor ni otros esquemas que tenga.
+
+Comprobar la conexión: `./scripts/db-sql.sh` y luego `SELECT 'OK' FROM dual;`
+
+Conexión JDBC: `jdbc:oracle:thin:@//localhost:${DB_PORT}/${DB_SERVICE}`
+
+### 4. Backend
+Pendiente (Fase 4).
+
+### 5. Frontend
+Pendiente (Fase 6).
+
+## Usuarios de prueba
+Pendiente (Fase 5).

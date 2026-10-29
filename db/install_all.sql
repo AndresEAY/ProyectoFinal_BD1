@@ -1,0 +1,37 @@
+-- Instala el esquema completo de la biblioteca en orden. Se detiene ante el primer error.
+SET DEFINE OFF
+SET FEEDBACK OFF
+SET SERVEROUTPUT ON
+WHENEVER SQLERROR EXIT FAILURE ROLLBACK
+PROMPT == 00_drop_all
+@@00_drop_all.sql
+PROMPT == 01_tablas
+@@01_tablas.sql
+PROMPT == 02_constraints_indices
+@@02_constraints_indices.sql
+PROMPT == 03_datos_catalogos
+@@03_datos_catalogos.sql
+PROMPT == 04_datos_prueba
+@@04_datos_prueba.sql
+PROMPT == 05_bitacora_triggers
+@@05_bitacora_triggers.sql
+PROMPT == 06_paquete_biblioteca
+@@06_paquete_biblioteca.sql
+PROMPT == 07_vistas_reportes
+@@07_vistas_reportes.sql
+PROMPT == Conteo por tabla
+SET FEEDBACK ON
+COLUMN TABLA FORMAT A12
+SELECT 'ROL' TABLA, COUNT(*) FILAS FROM ROL
+UNION ALL SELECT 'USUARIO', COUNT(*) FROM USUARIO
+UNION ALL SELECT 'AUTOR', COUNT(*) FROM AUTOR
+UNION ALL SELECT 'EDITORIAL', COUNT(*) FROM EDITORIAL
+UNION ALL SELECT 'CATEGORIA', COUNT(*) FROM CATEGORIA
+UNION ALL SELECT 'LIBRO', COUNT(*) FROM LIBRO
+UNION ALL SELECT 'LIBRO_AUTOR', COUNT(*) FROM LIBRO_AUTOR
+UNION ALL SELECT 'EJEMPLAR', COUNT(*) FROM EJEMPLAR
+UNION ALL SELECT 'PRESTAMO', COUNT(*) FROM PRESTAMO
+UNION ALL SELECT 'DEVOLUCION', COUNT(*) FROM DEVOLUCION
+UNION ALL SELECT 'BITACORA', COUNT(*) FROM BITACORA;
+PROMPT == Instalación completa
+EXIT
