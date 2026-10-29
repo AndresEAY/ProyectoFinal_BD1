@@ -68,8 +68,15 @@ Lee la conexión del `.env` de la raíz (`DB_PORT`, `DB_SERVICE`, `APP_USER`, `A
 
 Pruebas: `./mvnw test` (requieren la BD instalada; no dejan cambios).
 
-### 5. Frontend
-Pendiente (Fase 6).
+### 5. Frontend (Angular 22 + Angular Material)
+```bash
+cd frontend
+npm install
+npx ng serve
+```
+Abrir `http://localhost:4200` (el backend debe estar corriendo en el puerto 8080). La URL de la API está en `frontend/src/environments/environment.ts`.
+
+Orden para levantar todo: `db-up` → `db-install` (solo la primera vez o tras cambios de BD) → backend → frontend.
 
 ## Usuarios de prueba
 Contraseña de todos: **`Biblio2026`** (no confundir con `APP_USER_PASSWORD`, que es la del esquema Oracle).

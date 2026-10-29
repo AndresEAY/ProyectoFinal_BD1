@@ -1,7 +1,7 @@
 # PROGRESO DEL PROYECTO — Biblioteca Universitaria
 
 **Última actualización:** 2026-10-28 22:30 · por G_PROYECTO_FINAL 3
-**Fase actual:** 6 Frontend (BD y backend terminados)
+**Fase actual:** 8 Documentación (BD, backend y frontend terminados; faltan pasos manuales)
 **Fecha límite de entrega:** viernes 30/10/2026, 11:59
 
 ## Estado de un vistazo
@@ -12,14 +12,15 @@
 | 2 Base de datos Oracle | 13 | 8 | 0 | 5 |
 | 3 PL/SQL y bitácora | 5 | 5 | 0 | 0 |
 | 4 Backend Spring Boot | 10 | 10 | 0 | 0 |
-| 5 Seguridad y roles | 7 | 4 | 0 | 3 |
-| 6 Frontend Angular | 9 | 0 | 0 | 9 |
-| 7 Reportes | 5 | 2 | 0 | 3 |
+| 5 Seguridad y roles | 7 | 5 | 0 | 2 |
+| 6 Frontend Angular | 9 | 8 | 1 | 0 |
+| 7 Reportes | 5 | 3 | 0 | 2 |
 | 8 Documentación y presentación | 6 | 0 | 0 | 6 |
 | 9 Revisión final y entrega | 8 | 0 | 0 | 8 |
 
 ## Siguiente paso recomendado
-- 🤖 **6.1 en adelante (frontend Angular)** y 5.5, 7.3: lo sigue Claude Code.
+- 🤖 **8.1 y 8.3 (documento final y guion de demo)**: lo sigue Claude Code.
+- 👤 **5.6 y 7.5**: capturas por rol y de reportes con la app corriendo.
 - 👤 **2.9–2.12 (ER oficial en Data Modeler, 8 pts)**: cualquier integrante, en paralelo, siguiendo `modelo/guia_data_modeler.md`. Requiere la BD instalada (`db-up` + `db-create-user` + `db-install`).
 - 👤 1.1/1.6: el equipo revisa los ajustes del modelo (nota de 1.1) y lo aprueba.
 - 👤 0.5/2.13: probar en una segunda computadora (con Windows, para validar también los `.ps1`).
@@ -27,6 +28,7 @@
 ## Cambios que afectan a todos (leer tras cada git pull)
 | Fecha | Cambio | Qué debe hacer cada integrante |
 |-------|--------|--------------------------------|
+| 2026-10-28 | Frontend en `frontend/` (Angular 22) | `cd frontend && npm install && npx ng serve`; abrir http://localhost:4200 |
 | 2026-10-28 | Backend en `backend/`; `.env.example` agrega `JWT_SECRET` y `JWT_EXPIRACION_MINUTOS`. Las fechas de la BD usan `CURRENT_DATE`/`LOCALTIMESTAMP` (zona de la sesión) | Agregar las 2 variables JWT a tu `.env`; ejecutar `scripts/db-reset`; levantar con `cd backend && ./mvnw spring-boot:run` |
 | 2026-10-28 | Nuevos `.env.example` y scripts `scripts/db-*`; esquema completo en `db/` | Copiar `.env.example` a `.env` con los datos de tu contenedor Oracle; ejecutar `db-up`, `db-create-user` y `db-install` (ver README) |
 
@@ -82,21 +84,21 @@ Estados: ⬜ pendiente · 🟡 en curso · ✅ hecho · ⛔ bloqueado
 | 5.2 | Login JWT | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | JWT (jjwt 0.13, 8 h), BCrypt, filtro JWT; login 200 / 401 probado, usuario inactivo 401 |
 | 5.3 | Autorización por rol | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Reglas por rol en SecurityFilterChain según la matriz; probado endpoint × rol (403 donde corresponde). Bibliotecario solo registra PROFESOR/ESTUDIANTE |
 | 5.4 | CORS | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | CORS solo para http://localhost:4200 (configurable con CORS_ORIGEN) |
-| 5.5 | Frontend: interceptor, guards, menú por rol | | ⬜ | | |
+| 5.5 | Frontend: interceptor, guards, menú por rol | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `core/auth.interceptor.ts` (token y cierre de sesión ante 401), `core/guards.ts` (authGuard, rolGuard), menú por rol en `core/layout`. Probado con Playwright: el estudiante no ve ni abre por URL usuarios, préstamos, devoluciones, reportes ni bitácora |
 | 5.6 | Probar cada rol y capturas | | ⬜ | | 👤 |
 | 5.7 | (Opcional) Roles de BD | | ⬜ | | |
-| 6.1 | Proyecto Angular | | ⬜ | | |
-| 6.2 | core y shared | | ⬜ | | |
-| 6.3 | Pantallas CRUD | | ⬜ | | |
-| 6.4 | Nuevo préstamo | | ⬜ | | |
-| 6.5 | Devolución | | ⬜ | | |
-| 6.6 | Mi historial | | ⬜ | | |
-| 6.7 | Bitácora | | ⬜ | | |
-| 6.8 | Dashboard | | ⬜ | | |
-| 6.9 | Pulir UX | | ⬜ | | |
+| 6.1 | Proyecto Angular | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `frontend/` Angular 22.2 standalone + Material 22.2 + ng2-charts; `ng build` sin errores ni avisos |
+| 6.2 | core y shared | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `core/` (auth, interceptor, guards, layout, CrudService, notificaciones) y `shared/` (tabla genérica con búsqueda/orden/paginación, diálogo de confirmación, paginador en español) |
+| 6.3 | Pantallas CRUD | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Pantallas Usuarios, Libros (con autores/editorial/categoría), Ejemplares (filtros por libro/estado) y Catálogos (pestañas autores/editoriales/categorías), con formularios reactivos y confirmación antes de eliminar/desactivar |
+| 6.4 | Nuevo préstamo | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Nuevo préstamo con búsqueda de usuario/ejemplar; muestra fecha prevista y el error de la regla (probado: EST002 → límite de 3) |
+| 6.5 | Devolución | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Devoluciones: pendientes + diálogo (estado del ejemplar, observaciones); muestra "a tiempo / N días de retraso" (probado: 13 días) |
+| 6.6 | Mi historial | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Mi historial con vencidos en rojo y próximos a vencer (≤2 días) en naranja |
+| 6.7 | Bitácora | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Bitácora con filtros, paginación del servidor y detalle de datos anteriores/nuevos |
+| 6.8 | Dashboard | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Inicio con indicadores reales (personal: resumen global; profesor/estudiante: sus préstamos y libros por devolver) |
+| 6.9 | Pulir UX | G_PROYECTO_FINAL 3 | 🟡 | 2026-10-28 | Loaders, snackbars de éxito/error, confirmaciones y diseño adaptable básico. Recorrido automático sin errores de consola. Falta la revisión visual de la persona |
 | 7.1 | 07_vistas_reportes.sql | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `db/07_vistas_reportes.sql`, 7 vistas con datos |
 | 7.2 | Endpoints de reportes y exportación | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `/api/reportes/{nombre}` y `/export?formato=csv|xlsx` (POI); CSV con BOM para Excel; xlsx descargado y válido. Extra: `/api/reportes/resumen` para el dashboard |
-| 7.3 | Pantalla Reportes con gráficas | | ⬜ | | |
+| 7.3 | Pantalla Reportes con gráficas | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Reportes: barras (más prestados), línea (por mes), pastel (inventario por categoría), dona (a tiempo vs tarde), tabla de detalle de los 7 reportes y exportación Excel/CSV |
 | 7.4 | (Opcional) Power BI/Excel | | ⬜ | | |
 | 7.5 | Capturas de reportes | | ⬜ | | 👤 |
 | 8.1 | docs/documentacion_final.md | | ⬜ | | |
@@ -119,6 +121,9 @@ Estados: ⬜ pendiente · 🟡 en curso · ✅ hecho · ⛔ bloqueado
 |-------|------|--------------|--------|
 
 ## Registro de sesiones (más reciente arriba)
+### 2026-10-28 (3) · G_PROYECTO_FINAL 3
+- Hecho: Fase 6 completa (6.9 falta revisión visual), 5.5 y 7.3. Probado con un recorrido automático en Chromium headless (Playwright) por los 3 roles y los flujos de préstamo inválido, préstamo válido, devolución tardía y bitácora.
+- Pendiente / siguiente: documentación final y guion (8.1, 8.3); pasos manuales del equipo.
 ### 2026-10-28 (2) · G_PROYECTO_FINAL 3
 - Hecho: Fase 4 completa, Fase 5 lado backend (5.1–5.4), 7.2. Conexión BIBLIOTECA en DataGrip.
 - Corrección: el contenedor Oracle está en UTC; los scripts pasaron de SYSDATE/SYSTIMESTAMP a CURRENT_DATE/LOCALTIMESTAMP para que las fechas salgan en hora local.

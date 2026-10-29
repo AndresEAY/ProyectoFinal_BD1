@@ -1,0 +1,315 @@
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface-container-lowest);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  font: var(--mat-sys-headline-small);
+  margin: 0 0 16px;
+}
+
+h2 {
+  font: var(--mat-sys-title-large);
+  margin: 24px 0 12px;
+}
+
+.barra {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  .mat-mdc-icon-button {
+    color: inherit;
+  }
+}
+
+.espacio {
+  flex: 1;
+}
+
+.usuario {
+  font: var(--mat-sys-body-medium);
+  margin-right: 8px;
+}
+
+.contenedor {
+  height: calc(100% - 64px);
+}
+
+.menu {
+  width: 230px;
+}
+
+.activo {
+  background: var(--mat-sys-secondary-container);
+}
+
+.contenido {
+  padding: 24px;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.filtros,
+.formulario-linea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  padding-top: 8px;
+}
+
+.formulario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  padding-top: 8px;
+}
+
+.ancho-completo {
+  grid-column: 1 / -1;
+}
+
+.campo-ancho {
+  width: 380px;
+  max-width: 100%;
+}
+
+.filtro {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 8px;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--mat-sys-surface);
+}
+
+.acciones {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.sin-datos {
+  padding: 16px;
+  text-align: center;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.fila-inactiva td {
+  color: var(--mat-sys-outline);
+}
+
+.fila-error {
+  background: #fdecea;
+}
+
+.fila-alerta {
+  background: #fff4e0;
+}
+
+.texto-error {
+  color: var(--mat-sys-error);
+}
+
+.texto-exito {
+  color: #2e7d32;
+}
+
+.tarjeta {
+  margin-bottom: 24px;
+}
+
+.tarjeta-exito {
+  border-left: 6px solid #2e7d32;
+}
+
+.tarjeta-error {
+  border-left: 6px solid #c62828;
+}
+
+.snack-exito {
+  --mat-snack-bar-container-color: #2e7d32;
+}
+
+.snack-error {
+  --mat-snack-bar-container-color: #c62828;
+}
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+
+  mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &.azul mat-icon {
+    color: #1565c0;
+  }
+
+  &.rojo mat-icon {
+    color: #c62828;
+  }
+
+  &.verde mat-icon {
+    color: #2e7d32;
+  }
+}
+
+.indicador-valor {
+  font: var(--mat-sys-display-small);
+}
+
+.indicador-titulo {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.graficas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 16px;
+}
+
+.grafica mat-card-content {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.leyenda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.muestra {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--mat-sys-outline-variant);
+}
+
+.etiqueta {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+
+  &.INSERT {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.UPDATE {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+
+  &.DELETE {
+    background: #fdecea;
+    color: #c62828;
+  }
+}
+
+.comparacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  pre {
+    background: var(--mat-sys-surface-container);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+.login {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+}
+
+.login-tarjeta {
+  width: 380px;
+  padding: 8px;
+}
+
+.login-icono {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  color: var(--mat-sys-primary);
+}
+
+@media (max-width: 800px) {
+  .formulario-grid,
+  .comparacion {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario {
+    min-width: 0;
+  }
+
+  .graficas {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido {
+    padding: 12px;
+  }
+}
