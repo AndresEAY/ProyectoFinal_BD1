@@ -59,11 +59,26 @@ Comprobar la conexión: `./scripts/db-sql.sh` y luego `SELECT 'OK' FROM dual;`
 
 Conexión JDBC: `jdbc:oracle:thin:@//localhost:${DB_PORT}/${DB_SERVICE}`
 
-### 4. Backend
-Pendiente (Fase 4).
+### 4. Backend (Spring Boot 4, Java 21)
+```bash
+cd backend
+./mvnw spring-boot:run        # Windows: mvnw.cmd spring-boot:run
+```
+Lee la conexión del `.env` de la raíz (`DB_PORT`, `DB_SERVICE`, `APP_USER`, `APP_USER_PASSWORD`, `JWT_SECRET`). Queda en `http://localhost:8080`; Swagger en `http://localhost:8080/swagger-ui.html`. Contrato de la API en `docs/api.md`.
+
+Pruebas: `./mvnw test` (requieren la BD instalada; no dejan cambios).
 
 ### 5. Frontend
 Pendiente (Fase 6).
 
 ## Usuarios de prueba
-Pendiente (Fase 5).
+Contraseña de todos: **`Biblio2026`** (no confundir con `APP_USER_PASSWORD`, que es la del esquema Oracle).
+
+| Rol | Usuarios |
+|-----|----------|
+| ADMIN | `admin`, `admin2` |
+| BIBLIOTECARIO | `biblio1`, `biblio2` |
+| PROFESOR | `profesor1`, `profesor2`, `profesor3` |
+| ESTUDIANTE | `estudiante1` … `estudiante4` (`estudiante5` está inactivo) |
+
+Detalle de la situación de cada uno para la demo en `db/README.md`.

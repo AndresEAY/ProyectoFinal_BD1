@@ -26,7 +26,7 @@ Estudiantes, profesores y personal de biblioteca (func. 1).
 | CORREO | VARCHAR2(150 CHAR) | N | UK | | Correo electrónico |
 | TELEFONO | VARCHAR2(20 CHAR) | S | | | Teléfono |
 | DIRECCION | VARCHAR2(250 CHAR) | S | | | Dirección |
-| FECHA_REGISTRO | DATE | N | | SYSDATE | Fecha de registro |
+| FECHA_REGISTRO | DATE | N | | CURRENT_DATE | Fecha de registro |
 | ESTADO | CHAR(1) | N | | 'A'; ('A','I') | A = activo, I = inactivo (RN6, RN10) |
 | ID_ROL | NUMBER(10) | N | FK → ROL | | Rol del usuario |
 | USERNAME | VARCHAR2(50 CHAR) | N | UK | | Nombre de inicio de sesión |
@@ -87,7 +87,7 @@ Copia física de un libro (func. 2).
 | ID_LIBRO | NUMBER(10) | N | FK → LIBRO | | Libro al que pertenece |
 | CODIGO_BARRAS | VARCHAR2(30 CHAR) | N | UK | | Código de barras |
 | ESTADO | VARCHAR2(15 CHAR) | N | | 'DISPONIBLE'; ('DISPONIBLE','PRESTADO','DANADO','PERDIDO','INACTIVO') | Estado de la copia (RN1, RN2, RN10) |
-| FECHA_ADQUISICION | DATE | N | | SYSDATE | Fecha de adquisición |
+| FECHA_ADQUISICION | DATE | N | | CURRENT_DATE | Fecha de adquisición |
 
 ## PRESTAMO
 Préstamo de un ejemplar a un usuario (func. 3).
@@ -98,7 +98,7 @@ Préstamo de un ejemplar a un usuario (func. 3).
 | ID_USUARIO | NUMBER(10) | N | FK → USUARIO | | Usuario que solicita |
 | ID_EJEMPLAR | NUMBER(10) | N | FK → EJEMPLAR | | Ejemplar prestado |
 | ID_BIBLIOTECARIO | NUMBER(10) | N | FK → USUARIO | | Personal que registra el préstamo |
-| FECHA_PRESTAMO | DATE | N | | SYSDATE | Fecha del préstamo |
+| FECHA_PRESTAMO | DATE | N | | CURRENT_DATE | Fecha del préstamo |
 | FECHA_DEVOLUCION_PREVISTA | DATE | N | | >= FECHA_PRESTAMO | FECHA_PRESTAMO + ROL.DIAS_PRESTAMO (RN3) |
 | ESTADO | VARCHAR2(10 CHAR) | N | | 'ACTIVO'; ('ACTIVO','DEVUELTO','VENCIDO') | Estado del préstamo |
 
@@ -111,7 +111,7 @@ Devolución de un préstamo (func. 4). Relación 1:0..1 con PRESTAMO.
 |---------|------|------|-------|-----------------|-------------|
 | ID_DEVOLUCION | NUMBER(10) | N | PK | identity | Identificador de la devolución |
 | ID_PRESTAMO | NUMBER(10) | N | FK → PRESTAMO, UK | | Préstamo devuelto (RN8) |
-| FECHA_DEVOLUCION_REAL | DATE | N | | SYSDATE | Fecha real de devolución |
+| FECHA_DEVOLUCION_REAL | DATE | N | | CURRENT_DATE | Fecha real de devolución |
 | A_TIEMPO | CHAR(1) | N | | ('S','N') | S si se devolvió dentro del plazo (RN7) |
 | DIAS_RETRASO | NUMBER(4) | N | | 0; >= 0 | Días de retraso (RN7) |
 | OBSERVACIONES | VARCHAR2(500 CHAR) | S | | | Observaciones del estado del ejemplar |
@@ -123,7 +123,7 @@ Registro de operaciones sobre tablas críticas (func. 7, RN9). Sin FK: debe cons
 | Columna | Tipo | Nulo | Clave | Default / Check | Descripción |
 |---------|------|------|-------|-----------------|-------------|
 | ID_BITACORA | NUMBER(10) | N | PK | identity | Identificador del registro |
-| FECHA_HORA | TIMESTAMP | N | | SYSTIMESTAMP | Momento de la operación |
+| FECHA_HORA | TIMESTAMP | N | | LOCALTIMESTAMP | Momento de la operación |
 | USUARIO | VARCHAR2(128 CHAR) | N | | | Usuario de la aplicación (CLIENT_IDENTIFIER) o de la sesión |
 | TABLA | VARCHAR2(30 CHAR) | N | | | Tabla afectada |
 | OPERACION | VARCHAR2(6 CHAR) | N | | ('INSERT','UPDATE','DELETE') | Tipo de operación |

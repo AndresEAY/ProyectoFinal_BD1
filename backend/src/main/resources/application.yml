@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: biblioteca-backend
+  config:
+    import:
+      - optional:file:../.env[.properties]
+      - optional:file:.env[.properties]
+  datasource:
+    url: jdbc:oracle:thin:@//${DB_HOST:localhost}:${DB_PORT:1521}/${DB_SERVICE:XEPDB1}
+    username: ${APP_USER:BIBLIOTECA}
+    password: ${APP_USER_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:cambia-esta-clave-de-desarrollo-por-una-larga-de-al-menos-32-bytes}
+    expiracion-minutos: ${JWT_EXPIRACION_MINUTOS:480}
+  cors:
+    origen: ${CORS_ORIGEN:http://localhost:4200}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

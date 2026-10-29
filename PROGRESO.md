@@ -1,7 +1,7 @@
 # PROGRESO DEL PROYECTO — Biblioteca Universitaria
 
-**Última actualización:** 2026-10-28 23:30 · por G_PROYECTO_FINAL 3
-**Fase actual:** 4 Backend (BD terminada: Fases 2, 3 y 7.1)
+**Última actualización:** 2026-10-28 22:30 · por G_PROYECTO_FINAL 3
+**Fase actual:** 6 Frontend (BD y backend terminados)
 **Fecha límite de entrega:** viernes 30/10/2026, 11:59
 
 ## Estado de un vistazo
@@ -11,15 +11,15 @@
 | 1 Diseño del modelo | 6 | 2 | 2 | 2 |
 | 2 Base de datos Oracle | 13 | 8 | 0 | 5 |
 | 3 PL/SQL y bitácora | 5 | 5 | 0 | 0 |
-| 4 Backend Spring Boot | 10 | 0 | 0 | 10 |
-| 5 Seguridad y roles | 7 | 0 | 0 | 7 |
+| 4 Backend Spring Boot | 10 | 10 | 0 | 0 |
+| 5 Seguridad y roles | 7 | 4 | 0 | 3 |
 | 6 Frontend Angular | 9 | 0 | 0 | 9 |
-| 7 Reportes | 5 | 1 | 0 | 4 |
+| 7 Reportes | 5 | 2 | 0 | 3 |
 | 8 Documentación y presentación | 6 | 0 | 0 | 6 |
 | 9 Revisión final y entrega | 8 | 0 | 0 | 8 |
 
 ## Siguiente paso recomendado
-- 🤖 **4.1 en adelante (backend Spring Boot)**: lo sigue Claude Code.
+- 🤖 **6.1 en adelante (frontend Angular)** y 5.5, 7.3: lo sigue Claude Code.
 - 👤 **2.9–2.12 (ER oficial en Data Modeler, 8 pts)**: cualquier integrante, en paralelo, siguiendo `modelo/guia_data_modeler.md`. Requiere la BD instalada (`db-up` + `db-create-user` + `db-install`).
 - 👤 1.1/1.6: el equipo revisa los ajustes del modelo (nota de 1.1) y lo aprueba.
 - 👤 0.5/2.13: probar en una segunda computadora (con Windows, para validar también los `.ps1`).
@@ -27,6 +27,7 @@
 ## Cambios que afectan a todos (leer tras cada git pull)
 | Fecha | Cambio | Qué debe hacer cada integrante |
 |-------|--------|--------------------------------|
+| 2026-10-28 | Backend en `backend/`; `.env.example` agrega `JWT_SECRET` y `JWT_EXPIRACION_MINUTOS`. Las fechas de la BD usan `CURRENT_DATE`/`LOCALTIMESTAMP` (zona de la sesión) | Agregar las 2 variables JWT a tu `.env`; ejecutar `scripts/db-reset`; levantar con `cd backend && ./mvnw spring-boot:run` |
 | 2026-10-28 | Nuevos `.env.example` y scripts `scripts/db-*`; esquema completo en `db/` | Copiar `.env.example` a `.env` con los datos de tu contenedor Oracle; ejecutar `db-up`, `db-create-user` y `db-install` (ver README) |
 
 ## Tabla de tareas
@@ -67,20 +68,20 @@ Estados: ⬜ pendiente · 🟡 en curso · ✅ hecho · ⛔ bloqueado
 | 3.3 | Códigos de error documentados | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `docs/codigos_error.md` (-20001..-20012) |
 | 3.4 | 99_pruebas.sql | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `db/99_pruebas.sql`, 26 casos, resultados esperados en `db/README.md` |
 | 3.5 | Ejecutar reset/install/test y corregir | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | db-reset + db-install + db-test: 26 OK, 0 FALLO |
-| 4.1 | Proyecto Spring Boot | | ⬜ | | |
-| 4.2 | Entidades JPA | | ⬜ | | |
-| 4.3 | CRUD de catálogos, usuarios, libros, ejemplares | | ⬜ | | |
-| 4.4 | Endpoints de préstamos y devoluciones | | ⬜ | | |
-| 4.5 | Endpoint mi historial | | ⬜ | | |
-| 4.6 | Endpoint bitácora | | ⬜ | | |
-| 4.7 | CLIENT_IDENTIFIER por operación | | ⬜ | | |
-| 4.8 | Manejo global de excepciones | | ⬜ | | |
-| 4.9 | Swagger y docs/api.md | | ⬜ | | |
-| 4.10 | Pruebas backend | | ⬜ | | |
-| 5.1 | 08_seguridad_datos.sql | | ⬜ | | |
-| 5.2 | Login JWT | | ⬜ | | |
-| 5.3 | Autorización por rol | | ⬜ | | |
-| 5.4 | CORS | | ⬜ | | |
+| 4.1 | Proyecto Spring Boot | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `backend/` Spring Boot 4.0.9 + Java 21 (Initializr ya no ofrece 3.x). Lee `../.env` con `spring.config.import`. Arranca y conecta |
+| 4.2 | Entidades JPA | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | 10 entidades en `entity/`, `ddl-auto=validate` sin errores |
+| 4.3 | CRUD de catálogos, usuarios, libros, ejemplares | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | CRUD de roles (lectura), usuarios, autores, editoriales, categorías, libros (con autores y disponibles vía FN_EJEMPLARES_DISPONIBLES), ejemplares. DELETE de usuario/libro/ejemplar = desactivar (RN10). Probado con curl |
+| 4.4 | Endpoints de préstamos y devoluciones | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `POST /api/prestamos` y `/api/devoluciones` llaman a PKG_BIBLIOTECA con SimpleJdbcCall; reglas violadas → 409 con mensaje en español |
+| 4.5 | Endpoint mi historial | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `GET /api/historial` usa el id del token; probado que solo trae los propios |
+| 4.6 | Endpoint bitácora | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `GET /api/bitacora` con filtros tabla/operación/usuario/desde/hasta y paginación |
+| 4.7 | CLIENT_IDENTIFIER por operación | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `config/SesionOracle`: DBMS_SESSION.SET_IDENTIFIER al inicio y CLEAR_IDENTIFIER antes del commit. Bitácora muestra `biblio1`, `admin` |
+| 4.8 | Manejo global de excepciones | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `GlobalExceptionHandler`: ORA-20xxx → 404/403/400/409, ORA-00001 → 409 DUPLICADO, ORA-02292 → 409 EN_USO; sin trazas Oracle |
+| 4.9 | Swagger y docs/api.md | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Swagger en /swagger-ui.html con botón Authorize (JWT); contrato en `docs/api.md` |
+| 4.10 | Pruebas backend | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `./mvnw test`: 6 pruebas OK (login, préstamo+devolución, RN4, RN6, historial propio); con @Transactional no dejan cambios |
+| 5.1 | 08_seguridad_datos.sql | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | No se creó `08_seguridad_datos.sql`: los usuarios por rol con hash BCrypt ya están en `04_datos_prueba.sql` (contraseña `Biblio2026`, documentada en README) |
+| 5.2 | Login JWT | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | JWT (jjwt 0.13, 8 h), BCrypt, filtro JWT; login 200 / 401 probado, usuario inactivo 401 |
+| 5.3 | Autorización por rol | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | Reglas por rol en SecurityFilterChain según la matriz; probado endpoint × rol (403 donde corresponde). Bibliotecario solo registra PROFESOR/ESTUDIANTE |
+| 5.4 | CORS | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | CORS solo para http://localhost:4200 (configurable con CORS_ORIGEN) |
 | 5.5 | Frontend: interceptor, guards, menú por rol | | ⬜ | | |
 | 5.6 | Probar cada rol y capturas | | ⬜ | | 👤 |
 | 5.7 | (Opcional) Roles de BD | | ⬜ | | |
@@ -94,7 +95,7 @@ Estados: ⬜ pendiente · 🟡 en curso · ✅ hecho · ⛔ bloqueado
 | 6.8 | Dashboard | | ⬜ | | |
 | 6.9 | Pulir UX | | ⬜ | | |
 | 7.1 | 07_vistas_reportes.sql | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `db/07_vistas_reportes.sql`, 7 vistas con datos |
-| 7.2 | Endpoints de reportes y exportación | | ⬜ | | |
+| 7.2 | Endpoints de reportes y exportación | G_PROYECTO_FINAL 3 | ✅ | 2026-10-28 | `/api/reportes/{nombre}` y `/export?formato=csv|xlsx` (POI); CSV con BOM para Excel; xlsx descargado y válido. Extra: `/api/reportes/resumen` para el dashboard |
 | 7.3 | Pantalla Reportes con gráficas | | ⬜ | | |
 | 7.4 | (Opcional) Power BI/Excel | | ⬜ | | |
 | 7.5 | Capturas de reportes | | ⬜ | | 👤 |
@@ -118,6 +119,10 @@ Estados: ⬜ pendiente · 🟡 en curso · ✅ hecho · ⛔ bloqueado
 |-------|------|--------------|--------|
 
 ## Registro de sesiones (más reciente arriba)
+### 2026-10-28 (2) · G_PROYECTO_FINAL 3
+- Hecho: Fase 4 completa, Fase 5 lado backend (5.1–5.4), 7.2. Conexión BIBLIOTECA en DataGrip.
+- Corrección: el contenedor Oracle está en UTC; los scripts pasaron de SYSDATE/SYSTIMESTAMP a CURRENT_DATE/LOCALTIMESTAMP para que las fechas salgan en hora local.
+- Pendiente / siguiente: frontend Angular (Fase 6, 5.5, 7.3).
 ### 2026-10-28 · G_PROYECTO_FINAL 3
 - Hecho: Fase 0 (salvo 0.6, 0.7 y pruebas en otra máquina), Fase 1 en texto (borrador ER, diccionario, 3FN), Fase 2 automática (2.1–2.8), Fase 3 completa (bitácora, PKG_BIBLIOTECA, 26 pruebas OK) y vistas 7.1.
 - Pendiente / siguiente: backend (Fase 4); ER oficial en Data Modeler (2.9–2.12, manual).

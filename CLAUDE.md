@@ -42,7 +42,7 @@ Diseñar esquema (tablas, campos, PK, FK) · Crear modelo ER · Implementar en O
 | # | Decisión | Valor |
 |---|----------|-------|
 | D1 | Gestor de BD | **Oracle XE en contenedor Docker** (imagen `gvenzl/oracle-xe`, p. ej. tag `21-slim-faststart`; verificar el tag vigente en Docker Hub) |
-| D2 | Backend | **Java 21 (o 17) + Spring Boot 3.x**, Maven (con Maven Wrapper `mvnw`), Spring Web, Spring Data JPA + `JdbcTemplate`/`SimpleJdbcCall` para llamar procedimientos PL/SQL, Spring Security + JWT, Bean Validation, springdoc-openapi (Swagger) |
+| D2 | Backend | **Java 21 + Spring Boot 4.0.x** (Spring Initializr ya no ofrece 3.x; springdoc 3.0.x), Maven (con Maven Wrapper `mvnw`), Spring Web, Spring Data JPA + `JdbcTemplate`/`SimpleJdbcCall` para llamar procedimientos PL/SQL, Spring Security + JWT, Bean Validation, springdoc-openapi (Swagger) |
 | D3 | Frontend | **Angular 17+ (standalone components)**, Angular Material, Chart.js (ng2-charts) o ngx-charts, HttpClient con interceptor JWT y guards por rol |
 | D4 | Ejemplares | Tabla `EJEMPLAR` individual (código de barras y estado por copia) |
 | D5 | Claves primarias | `NUMBER GENERATED ALWAYS AS IDENTITY` |

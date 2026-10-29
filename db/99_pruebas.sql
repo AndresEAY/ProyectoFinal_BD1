@@ -2,6 +2,7 @@
 SET SERVEROUTPUT ON SIZE UNLIMITED
 SET FEEDBACK OFF
 SET LINESIZE 200
+ALTER SESSION SET TIME_ZONE = '-06:00';
 DECLARE
   v_ok             NUMBER := 0;
   v_fallos         NUMBER := 0;
@@ -65,7 +66,7 @@ BEGIN
   SELECT p.FECHA_DEVOLUCION_PREVISTA, e.ESTADO INTO v_fecha, v_texto
     FROM PRESTAMO p JOIN EJEMPLAR e ON e.ID_EJEMPLAR = p.ID_EJEMPLAR WHERE p.ID_PRESTAMO = v_id_prestamo;
   verificar('P1 préstamo válido crea registro', v_id_prestamo IS NOT NULL);
-  verificar('P2 RN3 fecha prevista = hoy + 7 días (estudiante)', v_fecha = TRUNC(SYSDATE) + 7);
+  verificar('P2 RN3 fecha prevista = hoy + 7 días (estudiante)', v_fecha = TRUNC(CURRENT_DATE) + 7);
   verificar('P3 RN2 ejemplar pasa a PRESTADO', v_texto = 'PRESTADO');
 
   esperar_error('E1 RN1 ejemplar ya prestado', -20007, 'PRO001', 'EJ-9780131103627-1');
@@ -87,7 +88,7 @@ BEGIN
   v_id_ejemplar := id_ejemplar('EJ-9780131103627-1');
   BEGIN
     INSERT INTO PRESTAMO (ID_USUARIO, ID_EJEMPLAR, ID_BIBLIOTECARIO, FECHA_PRESTAMO, FECHA_DEVOLUCION_PREVISTA, ESTADO)
-    VALUES (v_id_usuario, v_id_ejemplar, v_biblio, TRUNC(SYSDATE), TRUNC(SYSDATE) + 1, 'ACTIVO');
+    VALUES (v_id_usuario, v_id_ejemplar, v_biblio, TRUNC(CURRENT_DATE), TRUNC(CURRENT_DATE) + 1, 'ACTIVO');
     verificar('E9 índice único: dos préstamos abiertos del mismo ejemplar (no lanzó error)', FALSE);
   EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN verificar('E9 índice único: dos préstamos abiertos del mismo ejemplar', TRUE);
@@ -109,7 +110,7 @@ BEGIN
   END;
 
   v_id_prestamo := id_prestamo_abierto('EJ-9780133943030-1');
-  SELECT TRUNC(SYSDATE) - FECHA_DEVOLUCION_PREVISTA INTO v_numero FROM PRESTAMO WHERE ID_PRESTAMO = v_id_prestamo;
+  SELECT TRUNC(CURRENT_DATE) - FECHA_DEVOLUCION_PREVISTA INTO v_numero FROM PRESTAMO WHERE ID_PRESTAMO = v_id_prestamo;
   PKG_BIBLIOTECA.SP_REGISTRAR_DEVOLUCION(v_id_prestamo, v_biblio, 'Prueba tardía', 'DANADO', v_id_devolucion);
   SELECT A_TIEMPO INTO v_texto FROM DEVOLUCION WHERE ID_DEVOLUCION = v_id_devolucion;
   verificar('D5 RN7 devolución tardía: A_TIEMPO=N', v_texto = 'N');
@@ -126,7 +127,7 @@ BEGIN
   END;
 
   v_id_prestamo := id_prestamo_abierto('EJ-9780321127426-1');
-  UPDATE PRESTAMO SET FECHA_PRESTAMO = TRUNC(SYSDATE) - 20, FECHA_DEVOLUCION_PREVISTA = TRUNC(SYSDATE) - 1
+  UPDATE PRESTAMO SET FECHA_PRESTAMO = TRUNC(CURRENT_DATE) - 20, FECHA_DEVOLUCION_PREVISTA = TRUNC(CURRENT_DATE) - 1
    WHERE ID_PRESTAMO = v_id_prestamo;
   PKG_BIBLIOTECA.SP_ACTUALIZAR_VENCIDOS;
   SELECT ESTADO INTO v_texto FROM PRESTAMO WHERE ID_PRESTAMO = v_id_prestamo;
