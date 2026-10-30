@@ -44,7 +44,7 @@ Ejemplares especiales: `EJ-9788497592208-1` DANADO, `EJ-9786073236645-2` PERDIDO
 
 ## Pruebas (`99_pruebas.sql`) y resultado esperado
 
-Cada caso imprime `OK` o `FALLO`. Resultado esperado: **26 OK, 0 FALLO(S)**.
+Cada caso imprime `OK` o `FALLO`. Resultado esperado: **26 OK, 0 FALLO(S)**. Las pruebas asumen los datos iniciales: si se usó la aplicación antes, ejecutar primero `scripts/db-install` para dejar los datos como al inicio.
 
 | Caso | Qué prueba | Resultado esperado |
 |------|-----------|--------------------|
