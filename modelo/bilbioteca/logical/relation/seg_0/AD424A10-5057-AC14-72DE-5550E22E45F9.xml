@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_DEVOLUCION_BIBLIOTECARIO" directorySegmentName="seg_0" id="AD424A10-5057-AC14-72DE-5550E22E45F9">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>4C6E50B7-E5D5-CF39-6B10-F8E32C8F6FDF</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<sourcePk>ECD69DDD-EDE8-2A52-039E-D9EBD014F0AA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5FE749A1-FE67-4C2E-1B4C-18028252AD40</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5D244769-AA38-26F2-E3FA-05A222957EA4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

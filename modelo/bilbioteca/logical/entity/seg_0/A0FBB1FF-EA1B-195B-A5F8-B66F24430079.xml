@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A0FBB1FF-EA1B-195B-A5F8-B66F24430079" name="CATEGORIA">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>404D4193-8C87-ED0A-6997-12DDB8922DD5</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID CATEGORIA" id="075B06B7-C073-6BED-CF8C-62ECAC9A6F52">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>E892AC32-17C9-DC0C-63C1-BB9F8355F9B5</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="8CB7CBFE-DC33-BA67-7F86-A34421E65663">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>F7531E26-5623-DB83-16F4-5409F478503D</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESCRIPCION" id="EECF5E38-7D6E-E528-C91A-B205B541C9CE">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>1767661B-4778-6D36-DBF0-9447986310CE</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 CHAR</dataTypeSize>
+<ownDataTypeParameters>250 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BACBE03A-6D15-E741-2612-E678D75B5DDB" name="PK CATEGORIA">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>BA6C8BE7-5391-9C0C-3646-937C7ECB742B</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>075B06B7-C073-6BED-CF8C-62ECAC9A6F52</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="16862311-6795-8B2C-1459-443D67E814FC" name="UK CATEGORIA NOMBRE">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>951AADA1-2F69-7AF7-E6BA-15A0632F72D7</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>8CB7CBFE-DC33-BA67-7F86-A34421E65663</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

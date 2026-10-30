@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="ROL" directorySegmentName="seg_0" id="EEA244F5-D021-83CB-0D0A-1AC0F4BA59FC">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BF5E9659-7F9F-1FBC-0EB9-61B9E64D08A1</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRE" id="39E936CE-AB1F-250B-467F-D700A0CC7A2F">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MAX_PRESTAMOS" id="5FC83AFB-BDA2-7101-AC17-7735B0D4A515">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DESCRIPCION" id="75AAADF0-880C-F5DB-4CC7-6FB3FEA5F3ED">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DIAS_PRESTAMO" id="B79CFF24-502C-CF55-53F5-625D4350D0FB">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_ROL" id="F97DF897-B2FF-8023-6006-E70DE0BDE685">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_ROL" id="19887240-C9E0-F8C7-17F2-81B5E3954595">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UK_ROL_NOMBRE" id="210010F0-FDC6-2494-251D-47CD935FC28E">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_ROL" id="B325DE06-E404-7BA2-C7A1-A6FFE648790D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<existingIndex>19887240-C9E0-F8C7-17F2-81B5E3954595</existingIndex>
+<indexSegment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_ROL_NOMBRE" id="0AEB0780-50D3-A303-6477-0CF0CD4C82D2">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<existingIndex>210010F0-FDC6-2494-251D-47CD935FC28E</existingIndex>
+<indexSegment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

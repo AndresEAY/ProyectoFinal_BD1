@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2A36F84B-17BA-DCDD-420A-D0A681BD6DB6" name="AUTOR">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>B727D4BC-6DCA-554C-101D-E9499B4AE5A0</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID AUTOR" id="C4310A37-0AF6-0317-F8EA-2D78F38B890C">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>997CE597-00B9-E536-CB8A-55FE6B00576D</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRES" id="525F7712-33F2-0E76-AF26-C93EDBFB071E">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>00AFF08E-D32C-32A2-8CBB-81442AAB8C72</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="APELLIDOS" id="CD61982E-F033-AA80-66FE-872072BF13CF">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>28E0F277-9FE1-6605-3DA0-E2100E38EAD4</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NACIONALIDAD" id="7E2CF96E-7C1E-B99C-7BDC-DBED006F0E45">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>ABB6A7DF-15FA-5CBD-D755-4470A65AC0C1</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="018ADB3B-B7AA-3B20-D8E9-C616076210B6" name="PK AUTOR">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>111C2B9B-32DC-5379-2842-E18A51545C40</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C4310A37-0AF6-0317-F8EA-2D78F38B890C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CC3BD913-A09C-AB63-D183-8248C827083F" name="BITACORA">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>671946DD-1416-C339-C106-B4D4788093F5</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID BITACORA" id="43F8B919-E462-C9E2-CBC8-AC22488B8B35">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>563D0515-31EB-F47C-B111-201ECB0B218C</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA HORA" id="A4CE0B10-855D-5BC6-5A02-6CE4833ACC15">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>091DCB60-43B0-CD92-C6CB-252AE79CCE16</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>LOCALTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="USUARIO" id="26266FAC-A8FD-2798-9DB7-3993BFC15466">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>7DE8D5E1-BE56-9ACF-9359-991124808A19</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TABLA" id="3F970777-7153-277A-AAF7-062B136E0FC8">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>45EE5D86-3ECA-0BDB-99C9-0BF7EF873A7D</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OPERACION" id="B2D58E77-0744-91D9-EE82-52EA030DBA49">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>6EE41AB5-18D3-5047-07F9-A77A82DF58C4</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<constraintName>CK_BITACORA_OPERACION</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;DELETE&apos;" description=""/>
+<valueDef value="&apos;INSERT&apos;" description=""/>
+<valueDef value="&apos;UPDATE&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>6 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID REGISTRO" id="163C66CD-35ED-0EDB-8DBA-C05B60BEDA1E">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>57C014AE-AAF6-7A1D-223E-43D5C4FE8AFE</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DATOS ANTERIORES" id="9360464F-CA0B-DBF2-A5F4-8C4208C18B0D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>17D6C694-8257-B534-269A-075ADFBCF47C</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DATOS NUEVOS" id="CD65DB50-AA00-964B-0690-B7A5D91B6FAD">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>2C8A99E2-08BF-E494-9C6D-62F308CCE094</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="65121542-D999-DE49-2704-3A693B1D93FB" name="PK BITACORA">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>F0138A75-14D8-71DA-B76E-03395B50FB62</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>43F8B919-E462-C9E2-CBC8-AC22488B8B35</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

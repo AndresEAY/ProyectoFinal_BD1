@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRG_EJEMPLAR_BITACORA" directorySegmentName="seg_0" id="1302C2A7-264C-CD91-9E12-C8FB748E2598">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>TRG_EJEMPLAR_BITACORA</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<actions>INSERT, UPDATE, DELETE</actions>
+<body><![CDATA[DECLARE
+  v_anteriores CLOB;
+  v_nuevos     CLOB;
+BEGIN
+  IF UPDATING OR DELETING THEN
+    SELECT JSON_OBJECT('ID_EJEMPLAR' VALUE :OLD.ID_EJEMPLAR, 'ID_LIBRO' VALUE :OLD.ID_LIBRO, 'CODIGO_BARRAS' VALUE :OLD.CODIGO_BARRAS, 'ESTADO' VALUE :OLD.ESTADO, 'FECHA_ADQUISICION' VALUE :OLD.FECHA_ADQUISICION) INTO v_anteriores FROM dual;
+  END IF;
+  IF INSERTING OR UPDATING THEN
+    SELECT JSON_OBJECT('ID_EJEMPLAR' VALUE :NEW.ID_EJEMPLAR, 'ID_LIBRO' VALUE :NEW.ID_LIBRO, 'CODIGO_BARRAS' VALUE :NEW.CODIGO_BARRAS, 'ESTADO' VALUE :NEW.ESTADO, 'FECHA_ADQUISICION' VALUE :NEW.FECHA_ADQUISICION) INTO v_nuevos FROM dual;
+  END IF;
+  SP_REGISTRAR_BITACORA(
+    'EJEMPLAR',
+    CASE WHEN INSERTING THEN 'INSERT' WHEN UPDATING THEN 'UPDATE' ELSE 'DELETE' END,
+    NVL(:NEW.ID_EJEMPLAR, :OLD.ID_EJEMPLAR),
+    v_anteriores,
+    v_nuevos
+  );
+END;]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>006FCB95-97AF-FB99-3A77-9219C783D7DC</owner>
+<table>051401D3-4219-874A-F719-A9C85FC0FBA0</table>
+</TriggerOraclev10g>

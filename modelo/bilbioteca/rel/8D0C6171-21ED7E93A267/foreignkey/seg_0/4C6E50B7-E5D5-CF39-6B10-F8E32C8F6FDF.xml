@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4C6E50B7-E5D5-CF39-6B10-F8E32C8F6FDF" containerWithKeyObject="29E02FA5-7C55-4FEC-87F7-647C7FD4A1E3" localFKIndex="A4D990B6-9C5D-0273-2BF7-4E6AD2B590A0" name="FK_DEVOLUCION_BIBLIOTECARIO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>FK_DEVOLUCION_BIBLIOTECARIO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<referredTableLongName>BIBLIOTECA.USUARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>206E357F-0A67-0938-0345-051BC4A42EAB</referredTableID>
+<keyObject>72FA0F29-FD30-FD36-9DEA-DD5AFDFDAF69</keyObject>
+<referredKeyID>72FA0F29-FD30-FD36-9DEA-DD5AFDFDAF69</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_USUARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

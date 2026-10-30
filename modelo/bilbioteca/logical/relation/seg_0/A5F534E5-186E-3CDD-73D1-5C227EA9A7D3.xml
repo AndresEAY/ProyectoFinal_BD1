@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ASIGNA" directorySegmentName="seg_0" id="A5F534E5-186E-3CDD-73D1-5C227EA9A7D3">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:05:33 UTC</createdTime>
+<generatorID>529991B4-0516-CFA5-4B71-054FD805DA82</generatorID>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<engineerTo>
+<item key="8D0C6171-07ED-3FFB-5BF1-21ED7E93A267" value="true"/>
+</engineerTo>
+<sourcePk>7E7C5514-A5E6-AF18-42FC-A3E12EFDDC5D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>227C427A-4225-4C43-FE44-4AEB7B2FAEE7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5FE749A1-FE67-4C2E-1B4C-18028252AD40</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

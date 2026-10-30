@@ -1,0 +1,268 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA1ADEB6-0E5C-8558-94E4-EA625980A492" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="PRESTAMO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRESTAMO" id="5C7B0EF9-0A51-0836-58A3-A04977406CA5">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>ID_PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_USUARIO" id="21FF4FDE-66CA-3BDA-C7C1-BA0FB3EBF67B">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>ID_USUARIO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="79F1AB67-BD1C-B1B9-5ADE-993535F3B3DD" referredColumn="7475E2D5-6AE6-A7E9-9FF6-308CC0A1E9E6"/>
+</associations>
+</Column>
+<Column name="ID_EJEMPLAR" id="29FD1FE6-0B28-B6BA-43EC-68A16DCF6AAC">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>ID_EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="928F5462-BDE5-5636-B5F0-DEF5365177FE" referredColumn="584A030F-3AF1-A358-524A-01A3C9219FD5"/>
+</associations>
+</Column>
+<Column name="ID_BIBLIOTECARIO" id="B1802B92-9ED8-9577-E2C5-5C69397C889D">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>ID_BIBLIOTECARIO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E3AFF9D-CC56-33C2-82FD-A554CBDC7BD1" referredColumn="7475E2D5-6AE6-A7E9-9FF6-308CC0A1E9E6"/>
+</associations>
+</Column>
+<Column name="FECHA_PRESTAMO" id="3EF44C93-ACD4-17BC-8100-13D68782C650">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>FECHA_PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>CURRENT_DATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_DEVOLUCION_PREVISTA" id="C648CD63-5FB0-C8D2-A711-40784DD92CEE">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>FECHA_DEVOLUCION_PREVISTA</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="AEA72DEB-4256-D43E-6EAC-3AD0336034A8">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>PRESTAMO</sourceObjSchema>
+<sourceObjName>ESTADO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<constraintName>CK_PRESTAMO_ESTADO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;ACTIVO&apos;" description=""/>
+<valueDef value="&apos;DEVUELTO&apos;" description=""/>
+<valueDef value="&apos;VENCIDO&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;ACTIVO&apos;</defaultValue>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DF03D3AF-495E-1EDF-8895-285E53E2E22F" name="PK_PRESTAMO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C7B0EF9-0A51-0836-58A3-A04977406CA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B8A0B54-F0DF-127F-2C8E-365602A5092F" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_PRESTAMO_BIBLIOTECARIO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_PRESTAMO_BIBLIOTECARIO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1802B92-9ED8-9577-E2C5-5C69397C889D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5ABF08C-A618-5C7A-5B06-0DBF57CC3F34" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_PRESTAMO_EJEMPLAR">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_PRESTAMO_EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29FD1FE6-0B28-B6BA-43EC-68A16DCF6AAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="295F2D2F-E95F-77A6-AF3B-96681530D2D7" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_PRESTAMO_EJEMPLAR_ACTIVO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_PRESTAMO_EJEMPLAR_ACTIVO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexExpression>CASE &quot;ESTADO&quot; WHEN &apos;ACTIVO&apos; THEN &quot;ID_EJEMPLAR&quot; WHEN &apos;VENCIDO&apos; THEN &quot;ID_EJEMPLAR&quot; END</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="EB602A26-9E0F-9263-85B3-D9C408071293" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_PRESTAMO_ESTADO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_PRESTAMO_ESTADO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEA72DEB-4256-D43E-6EAC-3AD0336034A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="35E71CDE-3A43-CEA3-C8D1-A9E30DADCE6B" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_PRESTAMO_USUARIO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_PRESTAMO_USUARIO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21FF4FDE-66CA-3BDA-C7C1-BA0FB3EBF67B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C714A15-57C3-543F-9590-D0B37562B233" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="PK_PRESTAMO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C7B0EF9-0A51-0836-58A3-A04977406CA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="99B060B7-CADA-03D0-367B-6FB866C2B19D" name="FK_PRESTAMO_BIBLIOTECARIO">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1802B92-9ED8-9577-E2C5-5C69397C889D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD0BEE0E-B852-268D-94E9-887558FD5089" name="FK_PRESTAMO_EJEMPLAR">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29FD1FE6-0B28-B6BA-43EC-68A16DCF6AAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC0E02FB-C370-C36B-3191-D59CE572D1CB" name="FK_PRESTAMO_USUARIO">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21FF4FDE-66CA-3BDA-C7C1-BA0FB3EBF67B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_PRESTAMO_FECHAS" directorySegmentName="seg_0" id="4474F5E9-0969-A099-2493-8D7A317A43E4">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>CK_PRESTAMO_FECHAS</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<rule><![CDATA[FECHA_DEVOLUCION_PREVISTA >= FECHA_PRESTAMO]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

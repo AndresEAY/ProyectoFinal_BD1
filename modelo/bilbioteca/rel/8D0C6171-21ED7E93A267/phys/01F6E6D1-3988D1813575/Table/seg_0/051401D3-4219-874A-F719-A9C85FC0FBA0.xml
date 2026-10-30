@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="EJEMPLAR" directorySegmentName="seg_0" id="051401D3-4219-874A-F719-A9C85FC0FBA0">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BF5E9659-7F9F-1FBC-0EB9-61B9E64D08A1</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="FECHA_ADQUISICION" id="3E14946B-DF18-D901-A032-F9652528DA9D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<defaultValue>CURRENT_DATE</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ID_EJEMPLAR" id="584A030F-3AF1-A358-524A-01A3C9219FD5">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="ESTADO" id="6BE6DFD5-26EF-A4CF-CFD4-3478D8238494">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<defaultValue>&apos;DISPONIBLE&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CODIGO_BARRAS" id="7BC7DDBB-7ADC-F61B-7F7E-93A75050DA93">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_LIBRO" id="F3E1706F-5F4C-4D38-1A58-2BCD16892EFB">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_EJEMPLAR" id="0E2FAAF7-0006-DC12-41CE-98D90C780DAE">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_EJEMPLAR_LIBRO" id="1DA5B0F8-3B7E-D303-318E-9BCB73A7530D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_EJEMPLAR_ESTADO" id="82C48554-790E-CE1C-399C-31CF88859381">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UK_EJEMPLAR_CODIGO_BARRAS" id="BA01EB7D-CE06-B211-C0FA-8FB7D16BE97D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_EJEMPLAR_LIBRO" id="95ECD831-1030-8EF7-8880-658F19E1E420">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_EJEMPLAR" id="69A71331-54FD-6148-B578-A4C6F2034136">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<existingIndex>0E2FAAF7-0006-DC12-41CE-98D90C780DAE</existingIndex>
+<indexSegment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_EJEMPLAR_CODIGO_BARRAS" id="8E24D401-2717-0C1D-C056-4BE77109FA6A">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<existingIndex>BA01EB7D-CE06-B211-C0FA-8FB7D16BE97D</existingIndex>
+<indexSegment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

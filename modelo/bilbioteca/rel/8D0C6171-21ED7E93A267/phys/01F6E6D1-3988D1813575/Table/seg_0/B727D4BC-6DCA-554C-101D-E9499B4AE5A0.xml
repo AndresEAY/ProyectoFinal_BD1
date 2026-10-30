@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="AUTOR" directorySegmentName="seg_0" id="B727D4BC-6DCA-554C-101D-E9499B4AE5A0">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BF5E9659-7F9F-1FBC-0EB9-61B9E64D08A1</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRES" id="00AFF08E-D32C-32A2-8CBB-81442AAB8C72">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="APELLIDOS" id="28E0F277-9FE1-6605-3DA0-E2100E38EAD4">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_AUTOR" id="997CE597-00B9-E536-CB8A-55FE6B00576D">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="NACIONALIDAD" id="ABB6A7DF-15FA-5CBD-D755-4470A65AC0C1">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_AUTOR" id="A4FB5CAC-41DC-EEE0-4C6C-756837A90F78">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:40 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<schemaObject>58331F5F-E0EB-44EC-3A92-9831C63F511F</schemaObject>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_AUTOR" id="111C2B9B-32DC-5379-2842-E18A51545C40">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<segment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</segment>
+<tableSpace>AF427CFB-5AF2-4EBA-2E45-FAFD6FFB3928</tableSpace>
+<existingIndex>A4FB5CAC-41DC-EEE0-4C6C-756837A90F78</existingIndex>
+<indexSegment>EDC6829C-7CE1-57C5-4D5F-A1C78DBD577C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

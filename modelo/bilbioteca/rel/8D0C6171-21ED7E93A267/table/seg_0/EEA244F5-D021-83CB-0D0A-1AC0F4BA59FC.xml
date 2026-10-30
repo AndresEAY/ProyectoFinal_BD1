@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EEA244F5-D021-83CB-0D0A-1AC0F4BA59FC" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="ROL">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>ROL</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ROL" id="F97DF897-B2FF-8023-6006-E70DE0BDE685">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>ROL</sourceObjSchema>
+<sourceObjName>ID_ROL</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="NOMBRE" id="39E936CE-AB1F-250B-467F-D700A0CC7A2F">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>ROL</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<constraintName>CK_ROL_NOMBRE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;ADMIN&apos;" description=""/>
+<valueDef value="&apos;BIBLIOTECARIO&apos;" description=""/>
+<valueDef value="&apos;ESTUDIANTE&apos;" description=""/>
+<valueDef value="&apos;PROFESOR&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="75AAADF0-880C-F5DB-4CC7-6FB3FEA5F3ED">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>ROL</sourceObjSchema>
+<sourceObjName>DESCRIPCION</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIAS_PRESTAMO" id="B79CFF24-502C-CF55-53F5-625D4350D0FB">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>ROL</sourceObjSchema>
+<sourceObjName>DIAS_PRESTAMO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<constraintName>CK_ROL_DIAS_PRESTAMO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="DIAS_PRESTAMO &gt; 0"/>
+<implementationDef dbType="Oracle Database 21c" definition="DIAS_PRESTAMO &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAX_PRESTAMOS" id="5FC83AFB-BDA2-7101-AC17-7735B0D4A515">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>ROL</sourceObjSchema>
+<sourceObjName>MAX_PRESTAMOS</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<constraintName>CK_ROL_MAX_PRESTAMOS</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="MAX_PRESTAMOS &gt; 0"/>
+<implementationDef dbType="Oracle Database 21c" definition="MAX_PRESTAMOS &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B325DE06-E404-7BA2-C7A1-A6FFE648790D" name="PK_ROL">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_ROL</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F97DF897-B2FF-8023-6006-E70DE0BDE685"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0AEB0780-50D3-A303-6477-0CF0CD4C82D2" name="UK_ROL_NOMBRE">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>UK_ROL_NOMBRE</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39E936CE-AB1F-250B-467F-D700A0CC7A2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="19887240-C9E0-F8C7-17F2-81B5E3954595" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="PK_ROL">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_ROL</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F97DF897-B2FF-8023-6006-E70DE0BDE685"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="210010F0-FDC6-2494-251D-47CD935FC28E" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="UK_ROL_NOMBRE">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>UK_ROL_NOMBRE</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39E936CE-AB1F-250B-467F-D700A0CC7A2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

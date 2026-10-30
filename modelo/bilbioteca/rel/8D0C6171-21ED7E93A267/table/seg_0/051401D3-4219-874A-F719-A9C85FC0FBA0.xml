@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="051401D3-4219-874A-F719-A9C85FC0FBA0" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="EJEMPLAR">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_EJEMPLAR" id="584A030F-3AF1-A358-524A-01A3C9219FD5">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>EJEMPLAR</sourceObjSchema>
+<sourceObjName>ID_EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_LIBRO" id="F3E1706F-5F4C-4D38-1A58-2BCD16892EFB">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>EJEMPLAR</sourceObjSchema>
+<sourceObjName>ID_LIBRO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="87D2BF92-9A4A-E5DF-84D3-F4F091010546" referredColumn="A6E9F882-EE04-FE4E-3F5A-6569557E7D5F"/>
+</associations>
+</Column>
+<Column name="CODIGO_BARRAS" id="7BC7DDBB-7ADC-F61B-7F7E-93A75050DA93">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>EJEMPLAR</sourceObjSchema>
+<sourceObjName>CODIGO_BARRAS</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="6BE6DFD5-26EF-A4CF-CFD4-3478D8238494">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>EJEMPLAR</sourceObjSchema>
+<sourceObjName>ESTADO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<constraintName>CK_EJEMPLAR_ESTADO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;DANADO&apos;" description=""/>
+<valueDef value="&apos;DISPONIBLE&apos;" description=""/>
+<valueDef value="&apos;INACTIVO&apos;" description=""/>
+<valueDef value="&apos;PERDIDO&apos;" description=""/>
+<valueDef value="&apos;PRESTADO&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;DISPONIBLE&apos;</defaultValue>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_ADQUISICION" id="3E14946B-DF18-D901-A032-F9652528DA9D">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>EJEMPLAR</sourceObjSchema>
+<sourceObjName>FECHA_ADQUISICION</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:39 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>CURRENT_DATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="69A71331-54FD-6148-B578-A4C6F2034136" name="PK_EJEMPLAR">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="584A030F-3AF1-A358-524A-01A3C9219FD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E24D401-2717-0C1D-C056-4BE77109FA6A" name="UK_EJEMPLAR_CODIGO_BARRAS">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>UK_EJEMPLAR_CODIGO_BARRAS</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:42 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BC7DDBB-7ADC-F61B-7F7E-93A75050DA93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82C48554-790E-CE1C-399C-31CF88859381" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_EJEMPLAR_ESTADO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_EJEMPLAR_ESTADO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE6DFD5-26EF-A4CF-CFD4-3478D8238494"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1DA5B0F8-3B7E-D303-318E-9BCB73A7530D" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="IX_EJEMPLAR_LIBRO">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>IX_EJEMPLAR_LIBRO</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3E1706F-5F4C-4D38-1A58-2BCD16892EFB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E2FAAF7-0006-DC12-41CE-98D90C780DAE" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="PK_EJEMPLAR">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>PK_EJEMPLAR</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="584A030F-3AF1-A358-524A-01A3C9219FD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BA01EB7D-CE06-B211-C0FA-8FB7D16BE97D" schemaObject="58331F5F-E0EB-44EC-3A92-9831C63F511F" name="UK_EJEMPLAR_CODIGO_BARRAS">
+<sourceConnName>biblioteca</sourceConnName>
+<sourceObjSchema>BIBLIOTECA</sourceObjSchema>
+<sourceObjName>UK_EJEMPLAR_CODIGO_BARRAS</sourceObjName>
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:41 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BC7DDBB-7ADC-F61B-7F7E-93A75050DA93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95ECD831-1030-8EF7-8880-658F19E1E420" name="FK_EJEMPLAR_LIBRO">
+<createdBy>andresambrocio</createdBy>
+<createdTime>2026-10-29 05:03:43 UTC</createdTime>
+<ownerDesignName>bilbioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3E1706F-5F4C-4D38-1A58-2BCD16892EFB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
